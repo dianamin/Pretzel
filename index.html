@@ -1,0 +1,43 @@
+<html ng-app = "app">
+
+<head>
+	<meta charset = "utf-8" />
+	<title> Pretzel - Survey Wizard </title>
+
+	<link rel = "stylesheet" href = "css/bootstrap.css" />
+	<link rel = "stylesheet" href = "css/style.css" />
+
+	<script src = "js/jQuery.js"></script>
+	<script src = "js/angular.js"></script>
+
+	<script src = "js/init-app.js"></script>
+
+	<script src = "js/angular-route.js"></script>
+	<script src = "js/ui-bootstrap.js"></script>
+
+	<script src = "js/useful-functions.js"></script>
+
+	<script src = "js/numbers-factory.js"></script>
+	<script src = "js/get-numbers-ctrl.js"></script>
+</head>
+
+<body>
+{{1 + 2}}
+
+	<div ng-controller = "NumbersCtrl">
+		<li ng-repeat = "number in numbers">
+			{{number.value}}
+		</li>
+
+		<button ng-click = "addNumber()" class = "btn btn-default"> :) </button>
+	</div>
+
+	<br />
+	<ng-view> </ng-view>
+
+	<a href = "#/"> <button class = "btn btn-default"> View 1 </button> </a>
+	<a href = "#/2"> <button class = "btn btn-default"> View 2 </button> </a>
+
+</body>
+
+</html>
