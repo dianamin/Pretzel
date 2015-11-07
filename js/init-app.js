@@ -48,6 +48,10 @@ app.config(['$routeProvider',
         when('/statistics/:surveyId', {
             templateUrl: 'views/statistics.html',
             controller: 'StatisticsCtrl'
+        }).
+        when('/top-users', {
+            templateUrl: 'views/top-users.html',
+            controller: 'TopUsersCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
