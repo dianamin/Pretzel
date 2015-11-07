@@ -28,6 +28,10 @@ app.config(['$routeProvider',
         when('/takeSurvey/:surveyId', {
             templateUrl: 'views/take-survey.html',
             controller: 'TakeSurveyCtrl'
+        }).
+        when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'CreateAccountCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
