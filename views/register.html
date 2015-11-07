@@ -1,45 +1,48 @@
-<h1> Register </h1>
+<div class = "container">
+	<h1> Register </h1>
 
-<div ng-show = "!registered">
-	<table class = "table">
-		<thead>
-			<th> </th>
-			<th> </th>
-			<th> </th>
-		</thead>
+	<div ng-show = "!registered">
+		<table class = "table">
+			<thead>
+				<th> </th>
+				<th> </th>
+				<th> </th>
+			</thead>
 
-		<tbody>
-			<tr>
-				<td> Username </td>
-				<td> <input class = "form-control" type = "text" ng-model = "user.name"> </td>
-				<td> Minimum 4 characters, maximum 15. Can only contain letters and numbers. </td>
-			</tr>
-			<tr>
-				<td> Password </td>
-				<td> <input class = "form-control" type = "password" ng-model = "user.password"> </td>
-				<td> Minimum 8 characters, maximum 10. Can only contain letters and numbers. </td>
-			</tr>
-			<tr>
-				<td> Repeat passowrd </td>
-				<td> <input class = "form-control" type = "password" ng-model = "user.password2"> </td>
-				<td> </td>
-			</tr>
-			<tr>
-				<td> Profile picture URL </td>
-				<td> <input class = "form-control" type = "img" ng-model = "user.img"> </td>
-				<td> <img class = "" ng-src = "{{user.img}}" style = "width: 150px;"/> </td>
-			</tr> 
-		</tbody>
-	</table>	
+			<tbody>
+				<tr>
+					<td> Username </td>
+					<td> <input class = "form-control" type = "text" ng-model = "user.name"> </td>
+					<td> Minimum 4 characters, maximum 15. Can only contain letters and numbers. </td>
+				</tr>
+				<tr>
+					<td> Password </td>
+					<td> <input class = "form-control" type = "password" ng-model = "user.password"> </td>
+					<td> Minimum 8 characters, maximum 10. Can only contain letters and numbers. </td>
+				</tr>
+				<tr>
+					<td> Repeat passowrd </td>
+					<td> <input class = "form-control" type = "password" ng-model = "user.password2"> </td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td> Profile picture URL </td>
+					<td> <input class = "form-control" type = "img" ng-model = "user.img"> </td>
+					<td> <img class = "" ng-src = "{{user.img}}" style = "width: 150px;"/> </td>
+				</tr> 
+			</tbody>
+		</table>	
 
-	<div class = "alert alert-danger" role = "alert" ng-show = "errors != ''">
-		<span class = "glyphicon glyphicon-exclamation-sign" aria-hidden = "true"></span>
-		{{errors}}
+		<div class = "alert alert-danger" role = "alert" ng-show = "errors != ''">
+			<span class = "glyphicon glyphicon-exclamation-sign" aria-hidden = "true"></span>
+			{{errors}}
+		</div>
+
+		<button class = "btn btn-default" ng-click = "createAccount()"> Create Account </button>
 	</div>
 
-	<button class = "btn btn-default" ng-click = "createAccount()"> Create Account </button>
-</div>
+	<div ng-show = "registered">
+		<h2> Your account has been activated :) </h2>
+	</div>
 
-<div ng-show = "registered">
-	<h2> Your account has been activated :) </h2>
 </div>

@@ -1,12 +1,14 @@
-<h3> My account </h3>
+<div class = "container">
+	<h3> My account </h3>
 
-<div ng-show = "user.id == 0">
-	<a href = "#/register"> <button class = "btn btn-default"> Register </button> </a>
-	<a href = "#/login"> <button class = "btn btn-default"> Log in </button> </a>
-</div>
+	<div ng-show = "user.id == 0">
+		<a href = "#/register"> <button class = "btn btn-default"> Register </button> </a>
+		<a href = "#/login"> <button class = "btn btn-default"> Log in </button> </a>
+	</div>
 
-<div ng-show = "user.id != 0">
-	{{user.name}}
-	{{user.rating}}
-	<img ng-src = "{{user.img}}" />
-</div>
+	<div ng-show = "user.id != 0">
+		{{user.name}}
+		{{user.rating}}
+		<img ng-src = "{{user.img}}" />
+	</div>
+</div>	

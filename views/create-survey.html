@@ -1,47 +1,49 @@
-<h3> New Survey </h3>
+<div class = "container">
+	<h3> New Survey </h3>
 
-<label> Title </label>
-<input class = "form-control" type = "text" ng-model = "survey.title"/>
+	<label> Title </label>
+	<input class = "form-control" type = "text" ng-model = "survey.title"/>
 
-<label> Description </label>
-<textarea class = "form-control" ng-model = "survey.description"> </textarea>
+	<label> Description </label>
+	<textarea class = "form-control" ng-model = "survey.description"> </textarea>
 
-<label> Image Url </label>
-<input class = "form-control" type = "text" ng-model = "survey.imgUrl"/>
+	<label> Image Url </label>
+	<input class = "form-control" type = "text" ng-model = "survey.imgUrl"/>
 
-<label> Language </label>
-<select class = "form-control"
-		ng-options = "language.id as language.name for language in languages track by language.id" 
-		ng-model = "survey.language">
-</select>
+	<label> Language </label>
+	<select class = "form-control"
+			ng-options = "language.id as language.name for language in languages track by language.id" 
+			ng-model = "survey.language">
+	</select>
 
-<label> Category </label>
-<select class = "form-control"
-		ng-options = "category.id as category.name for category in categories track by category.id" 
-		ng-model = "survey.category">
-</select>
+	<label> Category </label>
+	<select class = "form-control"
+			ng-options = "category.id as category.name for category in categories track by category.id" 
+			ng-model = "survey.category">
+	</select>
 
-<label> Is login required to complete the survey? </label>
-<input type = "checkbox" ng-model = "survey.loginRequired" />
+	<label> Is login required to complete the survey? </label>
+	<input type = "checkbox" ng-model = "survey.loginRequired" />
 
-<br />
-<label> Expiration date </label>
-<input class = "form-control" type = "date" ng-model = "survey.expirationDate" />
+	<br />
+	<label> Expiration date </label>
+	<input class = "form-control" type = "date" ng-model = "survey.expirationDate" />
 
-<ul>
-	<li ng-repeat = "question in questions">
-		<label> Question text </label>
-		<input class = "form-control" type = "text" ng-model = "question.text" />
+	<ul>
+		<li ng-repeat = "question in questions">
+			<label> Question text </label>
+			<input class = "form-control" type = "text" ng-model = "question.text" />
 
-		<label> Question type </label>
-		<select class = "form-control"
-				ng-options = "type.id as type.name for type in questionTypes track by type.id" 
-				ng-model = "question.type">
-		</select>
+			<label> Question type </label>
+			<select class = "form-control"
+					ng-options = "type.id as type.name for type in questionTypes track by type.id" 
+					ng-model = "question.type">
+			</select>
 
-		{{questionTypes[question.type - 1].description}}
-	</li>
-</ul>
+			{{questionTypes[question.type - 1].description}}
+		</li>
+	</ul>
 
-<button class = "btn btn-default" ng-click = "addQuestion()"> Add question </button>
-<button class = "btn btn-default" ng-click = "addSurvey()"> Save survey </button>
+	<button class = "btn btn-default" ng-click = "addQuestion()"> Add question </button>
+	<button class = "btn btn-default" ng-click = "addSurvey()"> Save survey </button>
+</div>

@@ -1,7 +1,10 @@
 body {
-	font-family: Verdana;
+	font-family: 'Indie Flower', cursive;
+	font-size: 18px;
+	background-image: url('../img/bg.jpg');
 	background-attachment: fixed;
 	background-size: cover;
+	overflow-x: hidden;
 }
 
 #logo {
@@ -20,8 +23,8 @@ body {
 	padding: 5px;
 	width: 100%;
 	text-align: center;
-	background: linear-gradient(#dddddd, #ffffff);
-	background: -webkit-linear-gradient(#dddddd, #ffffff);
+	background: linear-gradient(#35513a, #397a45);
+	background: -webkit-linear-gradient(#35513a, #397a45);
 }
 
 .padding-20 {
@@ -35,6 +38,14 @@ body {
 	border-radius: 5px;
 	padding: 20px;
 	text-align: center;
+}
+
+.container {
+	margin-top: 5%;
+	background-color: #f0f0f0;
+	height: 85%;
+	border-radius: 5px;
+	padding: 20px;
 }
 
 
