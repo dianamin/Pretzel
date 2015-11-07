@@ -1,0 +1,55 @@
+<h1> {{survey.title}} </h1>
+
+<p> {{survey.description}} </p>
+
+<table class = "table">
+	<thead>
+		<th> </th>
+		<th> </th>
+		<th> </th>
+	</thead>
+	<tbody>
+		<tr>
+			<td> Language </td>
+			<td> {{survey.language}} </td>
+			<td rowspan = "3">
+				<div class = "survey-image" back-img = {{survey.img}}> </div>
+			</td>
+		</tr>
+		<tr>
+			<td> Category </td>
+			<td> {{survey.category}} </td>
+		</tr>
+		<tr>
+			<td> Expiration date </td>
+			<td> {{survey.expirationDate}} </td>
+		</tr>
+	</tbody>
+</table>
+
+{{questions[currentQuestion].text}}
+
+
+<center>
+	<button class = "btn btn-default" ng-click = "prevQuestion()" ng-if = "currentQuestion != 0"> prev </button>
+	<button class = "btn btn-default" ng-click = "nextQuestion()" ng-if = "currentQuestion != questionsCount - 1"> next </button>
+</center>
+
+
+<center>
+	<div ng-if = "questions[currentQuestion].qtype == 1">
+		<div class = "well" style = "text-align: justify;" ng-repeat = "answer in questions[currentQuestion].answers">
+			<i> {{answer.textAns}} </i>
+		</div>
+	</div>
+	<div ng-if = "questions[currentQuestion].qtype == 2">
+		<div class = "well" style = "text-align: justify;" ng-repeat = "answer in questions[currentQuestion].answers">
+			<i> {{answer.rangeAns}} </i>
+		</div>
+	</div>
+	<div ng-if = "questions[currentQuestion].qtype == 3">
+		<div class = "well" style = "text-align: justify;" ng-repeat = "answer in questions[currentQuestion].answers">
+			<i> {{answer.starAns}} </i>
+		</div>
+	</div>
+</rating>

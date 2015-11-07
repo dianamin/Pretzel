@@ -8,6 +8,6 @@
 	$survey_result = @$DB->query($select_surveys);
 
 	if ($survey_result->num_rows == 0)
-		echo "No";
-	else echo "Yes";
+		echo 0;
+	else echo 1;
 ?>

@@ -1,27 +1,19 @@
 app.controller('NumbersCtrl', function($scope, $http) {
-	$scope.numbers = [];
+	app.controller('GeneralSurveysCtrl', function($scope, $http) {
+	$scope.latestSurveys = [];
+
 
 	$scope.getData = function() {
-	    $http.get("php/get_data.php").then(function(response) {
-			$scope.numbers = response.data;
+	    $http.get("php/get_surveys.php").then(function(response) {
+			$scope.latestSurveys = response.data;
 		});
 		console.log("checked");
 	};
 
+	$scope.getData();
 	setInterval(function(){
 		$scope.getData();
 	}, 3000);
+});
 
-	$scope.addNumber = function() {
-		$(function(){
-	        $.ajax({
-	            type: "POST",
-	            url: 'php/add_number.php',
-	            data: ({'value': 21}),
-	            success: function(data) {
-					console.log(data);
-	            }
-	        });
-	    });
-	}
 });

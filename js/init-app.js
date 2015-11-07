@@ -40,6 +40,14 @@ app.config(['$routeProvider',
         when('/my-account', {
             templateUrl: 'views/my-account.html',
             controller: 'MyAccountCtrl'
+        }).
+        when('/my-surveys', {
+            templateUrl: 'views/my-surveys.html',
+            controller: 'MySurveysCtrl'
+        }).
+        when('/statistics/:surveyId', {
+            templateUrl: 'views/statistics.html',
+            controller: 'StatisticsCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',

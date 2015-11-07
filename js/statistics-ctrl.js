@@ -1,27 +1,10 @@
-app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
+app.controller('StatisticsCtrl', function($scope, $http, $routeParams) {
 	$scope.surveyId =  $routeParams.surveyId;
+
 	$scope.survey = {};
 
 	$scope.questions = [];
 	$scope.questionsCount = 0;
-    $scope.done = false;
-
-
-    $.ajax({
-        type: "POST",
-        url: "php/is_survey_done.php",
-        data: {id: $scope.surveyId}, 
-        cache: false,
-
-        success: function(data) {
-            data = parseInt(data);
-            console.log(data);
-            if (data != 0) $scope.done = true;
-            else $scope.done = false;
-
-            $scope.$apply();
-        }
-    });
 
 	$.ajax({
         type: "POST",
@@ -34,7 +17,23 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
         }
     });
 
+    $scope.getAnswers = function(i) {
+        if (i == -1) return;
 
+        $.ajax({
+            type: "POST",
+            url: "php/get_question_answers.php",
+            data: {id: $scope.questions[i].id}, 
+            cache: false,
+
+            success: function(data) {
+                var ans = JSON.parse(data);
+                $scope.questions[i].answers = ans;
+                $scope.getAnswers(i - 1);
+                $scope.$apply();
+            }
+        });    
+    }
 
 	$.ajax({
         type: "POST",
@@ -45,6 +44,7 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
         success: function(data) {
         	$scope.questions = JSON.parse(data);
         	$scope.questionsCount = $scope.questions.length;
+            $scope.getAnswers($scope.questionsCount - 1);
         }
     });
 
@@ -55,20 +55,5 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
     }
     $scope.prevQuestion = function() {
     	if ($scope.currentQuestion != 0) $scope.currentQuestion--;
-    }
-
-    $scope.submitSurvey = function() {
-    	var questionsJSON = JSON.stringify($scope.questions);
-
-        $.ajax({
-            type: "POST",
-            url: "php/submit_survey_answers.php",
-            data: {survey: $scope.surveyId, questions: questionsJSON}, 
-            cache: false,
-
-            success: function(data){
-                done = true;
-            }
-        });
     }
 });
