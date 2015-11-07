@@ -21,5 +21,28 @@
 		ng-model = "survey.category">
 </select>
 
-{{survey.language}} <br />
-{{survey.description}} <br />
+<label> Is login required to complete the survey? </label>
+<input type = "checkbox" ng-model = "survey.loginRequired" />
+
+<br />
+<label> Expiration date </label>
+<input class = "form-control" type = "date" ng-model = "survey.expirationDate" />
+
+<ul>
+	<li ng-repeat = "question in questions">
+		<label> Question text </label>
+		<input class = "form-control" type = "text" ng-model = "question.text" />
+
+		<label> Question type </label>
+		<select class = "form-control"
+				ng-options = "type.id as type.name for type in questionTypes track by type.id" 
+				ng-model = "question.type">
+		</select>
+
+		{{questionTypes[question.type - 1].description}}
+
+
+	</li>
+</ul>
+
+<button class = "btn btn-default" ng-click = "addQuestion()"> Add question </button>
