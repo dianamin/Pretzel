@@ -6,6 +6,7 @@ app.controller('CreateAccountCtrl', function($scope, $http) {
 		img: ""
 	}
 
+	$scope.registered = false;
 	$scope.errors = "";
 
 	$scope.createAccount = function() {
@@ -20,6 +21,9 @@ app.controller('CreateAccountCtrl', function($scope, $http) {
 
 	        success: function(data){
 	            $scope.errors = data;
+	        	if ($scope.errors != "Username is already taken.")
+	        		$scope.registered = true;
+	        	$scope.$apply();
 	        }
 	    });
 	}
