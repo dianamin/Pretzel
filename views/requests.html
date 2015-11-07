@@ -12,7 +12,9 @@
 					<td> {{request.userName}} </td>
 					<td>
 						<div ng-show = "admin">
-							<button ng-click = "changeStatus(user.id, user.level, request)"> <span class = "glyphicon glyphicon-arrow-up"> </span> </button>
+							<button ng-click = "changeStatus(request.userId, request.id)"> <span class = "glyphicon glyphicon-arrow-up"> </span> </button>
+
+							<button ng-click = "delete(request.id)"> <span class = "glyphicon glyphicon-remove"> </span> </button>
 						</div>
 					</td>
 				</tr>

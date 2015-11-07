@@ -6,6 +6,8 @@ app.controller('MyAccountCtrl', function($scope, $http) {
 		level: ""
 	}
 
+	$scope.asked = false;
+
 	$scope.getAccount = function() {
 		$http.get("php/my_account.php").then(function(response) {
 			$scope.user = response.data;
@@ -26,4 +28,18 @@ app.controller('MyAccountCtrl', function($scope, $http) {
 	    });
 	}
 	$scope.getAccount();
+
+	$scope.requestBossRights = function() {
+		$.ajax({
+	        type: "POST",
+	        url: "php/insert_request.php",
+	        data: {}, 
+	        cache: false,
+
+	        success: function(data){
+	        	$scope.asked = true;
+	        	console.log(data);
+	       	}
+	    });
+	}
 });

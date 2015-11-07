@@ -3,6 +3,15 @@ app.controller('NewSurveyCtrl', function($scope, $http, CategoriesFactory, Langu
 	$scope.languages = [];
 	$scope.questionTypes = [];
 
+
+	$scope.boss = false;
+
+    $http.get("php/my_account.php").then(function(response) {
+		$scope.user = response.data;
+		console.log($scope.user);
+		if ($scope.user.level >= 1)  $scope.boss = true;
+	});
+
 	$scope.survey = {
 		title: "",
 		description: "",

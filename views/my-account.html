@@ -9,7 +9,12 @@
 	<div ng-show = "user.id != 0">
 		{{user.name}}
 		{{user.rating}}
-		<img ng-src = "{{user.img}}" />
+		<img ng-src = "{{user.img}}" style = "height: 200px;"/>
+		<br />
+
+		<button ng-show = "user.level == 0 && asked == false" class = "btn btn-default" ng-click = "requestBossRights()">
+			I want to publish surveys!
+		</button>
 
 		<br />
 		<button class = "btn btn-danger" ng-click = "logOut()"> Log out </button>

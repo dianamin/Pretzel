@@ -3,6 +3,8 @@
 		<a href = "#/statistics/{{survey.id}}">
 			<div class = "survey-thumb">
 				<div class = "survey-image" back-img = {{survey.img}}> </div>
+				<span ng-if = "survey.published == 1"> published </span>
+				<span ng-if = "survey.published == 0"> not published </span>
 				<br />
 				<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
 				<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 66 </div>

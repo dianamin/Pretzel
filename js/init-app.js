@@ -14,6 +14,8 @@ app.filter('array', function() {
     };
 });
 
+
+
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -56,6 +58,10 @@ app.config(['$routeProvider',
         when('/requests', {
             templateUrl: 'views/requests.html',
             controller: 'RequestsCtrl'
+        }).
+        when('/edit/:surveyId', {
+            templateUrl: 'views/edit.html',
+            controller: 'EditSurveyCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',

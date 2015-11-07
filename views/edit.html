@@ -1,7 +1,7 @@
 <div ng-show = "boss">
 
 	<div class = "container">
-		<h3> New Survey </h3>
+		<h3> Edit Survey </h3>
 
 		<label> Title </label>
 		<input class = "form-control" type = "text" ng-model = "survey.title"/>
@@ -28,8 +28,6 @@
 		<input type = "checkbox" ng-model = "survey.loginRequired" />
 
 		<br />
-		<label> Expiration date </label>
-		<input class = "form-control" type = "date" ng-model = "survey.expirationDate" />
 
 		<ul>
 			<li ng-repeat = "question in questions">
@@ -45,12 +43,6 @@
 				{{questionTypes[question.type - 1].description}}
 			</li>
 		</ul>
-
-		<button class = "btn btn-default" ng-click = "addQuestion()"> Add question </button>
 		<button class = "btn btn-default" ng-click = "addSurvey()"> Save survey </button>
 	</div>
-</div>
-
-<div ng-show = "!boss">
-	<h2> Go to My Account to request permision to publish surveys! </h2>
 </div>

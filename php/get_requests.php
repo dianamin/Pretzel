@@ -2,7 +2,8 @@
 	include 'db_connect.php';
 	$requests_query = "
 		SELECT *
-		FROM requests ";
+		FROM requests 
+		ORDER BY id DESC";
 
 	$requests_result = $DB->query($requests_query);
 	$requests_count = $requests_result->num_rows;	

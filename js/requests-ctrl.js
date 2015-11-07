@@ -45,4 +45,17 @@ app.controller('RequestsCtrl', function($scope, $http) {
 	        }
 	    });
 	}
+
+	$scope.delete = function(request_id) {
+		$.ajax({
+	        type: "POST",
+	        url: "php/delete_request.php",
+	        data: {id: request_id}, 
+	        cache: false,
+
+	        success: function(data){
+	            console.log(data);
+	        }
+	    });
+	}
 });
