@@ -19,8 +19,10 @@
 
 	<script src = "js/directives.js"></script>
 
-	<script src = "js/numbers-factory.js"></script>
-	<script src = "js/get-numbers-ctrl.js"></script>
+	<script src = "js/categories-factory.js"></script>
+	<script src = "js/languages-factory.js"></script>
+
+	<script src = "js/new-survey-ctrl.js"></script>
 </head>
 
 <body>
@@ -29,26 +31,17 @@
 		<span id = "title"> Pretzel Survey Wizard </span>
 	</div>
 
+
 	<div class = "row">
-		<div class = "col-sm-1 col-md-1"> </div>
-		<div class = "col-sm-5 col-md-5" class = "padding-20"> 
-			<div class = "survey-list-container">
-				<h3> Latest Surveys </h3>
-
-				<div class = "survey-thumb">
-					<div class = "survey-image" back-img = "http://www.newton.ac.uk/files/covers/968361.jpg"> </div>
-					<p> Intrebare random abcd abcd abcd? </p>		
-					<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
-					<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 55 </div>
-				</div>
-
-
-			</div>
+		<div class = "col-sm-1 col-md-1">
+			<a href = "#/create-quiz">
+				<button class = "btn btn-default">
+					<span class = "glyphicon glyphicon-plus"> </span>
+				</button>
+			</a>
 		</div>
-		<div class = "col-sm-5 col-md-5" class = "padding-20"> 
-			<div class = "survey-list-container"> 
-				<h3> Recommended Surveys </h3>
-			</div>
+		<div class = "col-sm-10 col-md-10">
+			<ng-view> </ng-view>
 		</div>
 		<div class = "col-sm-1 col-md-1"> </div>
 	</div>

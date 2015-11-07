@@ -4,7 +4,7 @@
 	$host = "localhost";
 	$username = "";
 	$password = "";
-	$dbname = "";
+	$dbname = "pretzel";
 	
 	$DB = new MySQLi($host, $username, $password, $dbname); 
 	$DB->set_charset("utf8");

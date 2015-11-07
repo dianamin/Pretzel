@@ -18,10 +18,11 @@ app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
         when('/', {
-            templateUrl: 'views/1.html'
+            templateUrl: 'views/home.html'
         }).
-        when('/2', {
-            templateUrl: 'views/2.html'
+        when('/create-quiz', {
+            templateUrl: 'views/create-quiz.html',
+            controller: 'NewSurveyCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
