@@ -2,8 +2,8 @@
 	include 'db_connect.php';
 
 
-	$questions = json_decode(stripslashes($_POST['questions']));
 	$survey = json_decode(stripslashes($_POST['survey']));
+	$questions = json_decode(stripslashes($_POST['questions']));
 	
 	$survey->title = $DB->real_escape_string($survey->title);
 	$survey->description = $DB->real_escape_string($survey->description);

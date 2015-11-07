@@ -24,11 +24,19 @@ app.config(['$routeProvider',
         when('/create-survey', {
             templateUrl: 'views/create-survey.html',
             controller: 'NewSurveyCtrl'
+        }).
+        when('/takeSurvey/:surveyId', {
+            templateUrl: 'views/take-survey.html',
+            controller: 'TakeSurveyCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
             controller: 'AdminPanelCtrl'
         }).
+        when('/edit/:lessonId', {
+            templateUrl: 'edit.html',
+            controller: 'EditPageCtrl'
+        })
         when('/lessons', {
             templateUrl: 'list.html',
             controller: 'AdminListCtrl'
