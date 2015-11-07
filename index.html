@@ -17,13 +17,43 @@
 
 	<script src = "js/useful-functions.js"></script>
 
+	<script src = "js/directives.js"></script>
+
 	<script src = "js/numbers-factory.js"></script>
 	<script src = "js/get-numbers-ctrl.js"></script>
 </head>
 
 <body>
-{{1 + 2}}
+	<div id = "logo-bar">
+		<img id = "logo" src = "img/logo.png" />
+		<span id = "title"> Pretzel Survey Wizard </span>
+	</div>
 
+	<div class = "row">
+		<div class = "col-sm-1 col-md-1"> </div>
+		<div class = "col-sm-5 col-md-5" class = "padding-20"> 
+			<div class = "survey-list-container">
+				<h3> Latest Surveys </h3>
+
+				<div class = "survey-thumb">
+					<div class = "survey-image" back-img = "http://www.newton.ac.uk/files/covers/968361.jpg"> </div>
+					<p> Intrebare random abcd abcd abcd? </p>		
+					<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
+					<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 55 </div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class = "col-sm-5 col-md-5" class = "padding-20"> 
+			<div class = "survey-list-container"> 
+				<h3> Recommended Surveys </h3>
+			</div>
+		</div>
+		<div class = "col-sm-1 col-md-1"> </div>
+	</div>
+
+<!--
 	<div ng-controller = "NumbersCtrl">
 		<li ng-repeat = "number in numbers">
 			{{number.value}}
@@ -37,7 +67,7 @@
 
 	<a href = "#/"> <button class = "btn btn-default"> View 1 </button> </a>
 	<a href = "#/2"> <button class = "btn btn-default"> View 2 </button> </a>
-
+-->
 </body>
 
 </html>
