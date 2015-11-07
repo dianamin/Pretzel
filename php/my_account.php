@@ -1,7 +1,6 @@
 <?php
 	include 'db_connect.php';
 
-
 	$user = array (
 		"id" => $_SESSION['user_id'],
 		"name" => $_SESSION['user_name'],

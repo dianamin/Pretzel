@@ -1,0 +1,26 @@
+<div ng-show = "admin">
+	<div class = "container">
+		<table class = "table table-stripped">
+			<thead>
+				<th> # </th>
+				<th> Username </th>
+				<th> </th>
+			</thead>
+			<tbody>
+				<tr ng-repeat = "request in requests">
+					<td> {{request.index}} </td>
+					<td> {{request.userName}} </td>
+					<td>
+						<div ng-show = "admin">
+							<button ng-click = "changeStatus(user.id, user.level, request)"> <span class = "glyphicon glyphicon-arrow-up"> </span> </button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div ng-show = "!admin">
+	<h2> Nu ai permisiunile necesare. :( </h2>
+</div>

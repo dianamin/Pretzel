@@ -14,7 +14,13 @@
 				<td> {{user.rating}} </td>
 				<td> {{user.level}} </td>
 				<td>
-					:)
+					<div ng-show = "admin && user.level == 0">
+						<button ng-click = "changeStatus(user.id, user.level)"> <span class = "glyphicon glyphicon-arrow-up"> </span> </button>
+					</div>
+					<div ng-show = "admin && user.level == 1">
+						<button ng-click = "changeStatus(user.id, user.level)"> <span class = "glyphicon glyphicon-arrow-down"> </span> </button>
+
+					</div>
 				</td>
 			</tr>
 		</tbody>

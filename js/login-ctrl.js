@@ -19,9 +19,11 @@ app.controller('EnterAccountCtrl', function($scope, $http) {
 
 	        success: function(data){
 	            $scope.errors = data;
-	            console.log(data);
-	        	if ($scope.errors == "")
+	     		
+	        	if ($scope.errors != "User not found." && $scope.errors != "Wrong password.") {
 	        		$scope.loggedIn = true;
+	        	}
+
 	        	$scope.$apply();
 	        }
 	    });

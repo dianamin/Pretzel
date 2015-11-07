@@ -1,9 +1,9 @@
-app.controller('TopUsersCtrl', function($scope, $http) {
-	$scope.users = [];
+app.controller('RequestsCtrl', function($scope, $http) {
+	$scope.requests = [];
 
 	$scope.getData = function() {
-	    $http.get("php/get_top_users.php").then(function(response) {
-			$scope.users = response.data;
+	    $http.get("php/get_requests.php").then(function(response) {
+			$scope.requests = response.data;
 		});
 	}
 
@@ -22,16 +22,26 @@ app.controller('TopUsersCtrl', function($scope, $http) {
 		if ($scope.user.level == 2)  $scope.admin = true;
 	});
 
-	$scope.changeStatus = function(userId, status) {
-		status = 1 - status;
+	$scope.changeStatus = function(userId, request_id) {
 		$.ajax({
 	        type: "POST",
 	        url: "php/level_up_user.php",
-	        data: {id: userId, new_status: status}, 
+	        data: {id: userId, new_status: 1}, 
 	        cache: false,
 
 	        success: function(data){
 	            console.log(data);
+
+	            $.ajax({
+			        type: "POST",
+			        url: "php/delete_request.php",
+			        data: {id: request_id}, 
+			        cache: false,
+
+			        success: function(data){
+			            console.log(data);
+			        }
+			    });
 	        }
 	    });
 	}

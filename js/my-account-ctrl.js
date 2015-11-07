@@ -13,5 +13,17 @@ app.controller('MyAccountCtrl', function($scope, $http) {
 		});
 	};
 
+	$scope.logOut = function() {
+		$.ajax({
+	        type: "POST",
+	        url: "php/log_out.php",
+	        data: {}, 
+	        cache: false,
+
+	        success: function(data){
+	        	location.reload();
+	        }
+	    });
+	}
 	$scope.getAccount();
 });

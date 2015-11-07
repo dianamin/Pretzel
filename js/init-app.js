@@ -52,6 +52,10 @@ app.config(['$routeProvider',
         when('/top-users', {
             templateUrl: 'views/top-users.html',
             controller: 'TopUsersCtrl'
+        }).
+        when('/requests', {
+            templateUrl: 'views/requests.html',
+            controller: 'RequestsCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
