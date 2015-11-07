@@ -3,13 +3,17 @@
 		<div class = "survey-list-container">
 			<h3> Latest Surveys </h3>
 
-			<div class = "survey-thumb">
-				<div class = "survey-image" back-img = "http://www.newton.ac.uk/files/covers/968361.jpg"> </div>
-				<p> Intrebare random abcd abcd abcd? </p>		
-				<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
-				<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 66 </div>
+			<div ng-repeat = "survey in latestSurveys">
+				<a href = "#/">
+					<div class = "survey-thumb">
+						<div class = "survey-image" back-img = {{survey.img}}> </div>
+						<br />
+						<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
+						<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 66 </div>
+						<p> {{survey.title}} </p>		
+					</div>
+				</a>
 			</div>
-
 
 		</div>
 	</div>

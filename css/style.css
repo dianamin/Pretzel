@@ -32,6 +32,7 @@ body {
 	height: 85%;
 	border-radius: 5px;
 	padding: 20px;
+	text-align: center;
 }
 
 
@@ -46,7 +47,11 @@ body {
 	border-radius: 7px;
 	background-color: #dddddd;
 	width: 110px;
+	height: 200px;
 	color: #444444;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
 }
 .survey-statistic {
 	display: inline-block;
