@@ -4,6 +4,22 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
 
 	$scope.questions = [];
 	$scope.questionsCount = 0;
+    $scope.done = false;
+
+
+    $.ajax({
+        type: "POST",
+        url: "php/is_survey_done.php",
+        data: {id: $scope.surveyId}, 
+        cache: false,
+
+        success: function(data) {
+            if (data == "Yes") $scope.done = true;
+
+            console.log($scope.done);
+            $scope.$apply();
+        }
+    });
 
 	$.ajax({
         type: "POST",
@@ -15,6 +31,8 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
         	$scope.survey = JSON.parse(data);
         }
     });
+
+
 
 	$.ajax({
         type: "POST",
@@ -43,11 +61,11 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
         $.ajax({
             type: "POST",
             url: "php/submit_survey_answers.php",
-            data: {questions: questionsJSON}, 
+            data: {survey: $scope.surveyId, questions: questionsJSON}, 
             cache: false,
 
             success: function(data){
-                console.log(data);
+                done = true;
             }
         });
     }

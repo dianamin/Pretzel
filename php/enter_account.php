@@ -20,6 +20,10 @@
 		}
 		else {
 			$_SESSION['user_id'] = $selected_user[0]['id'];
+			$_SESSION['user_name'] = $selected_user[0]['name'];
+			$_SESSION['user_img'] = $selected_user[0]['img'];
+			$_SESSION['user_rating'] = $selected_user[0]['rating'];
+			$_SESSION['user_level'] = $selected_user[0]['level'];
 		}
 	}
 ?>

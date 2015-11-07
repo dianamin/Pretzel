@@ -11,7 +11,7 @@
 	
 
 
-	$insert_survey = "INSERT INTO surveys(id, user_id, img, title, description, login_required, expiration_date, published, language) VALUES ('NULL', 0, '{$survey->imgUrl}', '{$survey->title}', '{$survey->description}', '{$survey->loginRequired}', '{$survey->expirationDate}', '{$survey->language}', '{$survey->category}')";
+	$insert_survey = "INSERT INTO surveys(id, user_id, img, title, description, login_required, expiration_date, published, language) VALUES ('NULL', '{$_SESSION['user_id']}', '{$survey->imgUrl}', '{$survey->title}', '{$survey->description}', '{$survey->loginRequired}', '{$survey->expirationDate}', '{$survey->language}', '{$survey->category}')";
 	$inserted_query = @$DB->query($insert_survey);
 
 	$select_surveys = "SElECT * FROM surveys ORDER BY id DESC";
@@ -20,11 +20,9 @@
 
 	$aux = $surveys_ids[0]['id'];
 
-
 	foreach ($questions as $question) {
 		$question->text = $DB->real_escape_string($question->text);
 		$insert_question = "INSERT INTO questions(id, survey_id, text, type) VALUES('NULL', '{$aux}', '{$question->text}', '{$question->type}')";
-		echo $insert_question;
 		$inserted_question_query = @$DB->query($insert_question);
 	}
 	

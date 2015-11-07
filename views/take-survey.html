@@ -27,28 +27,35 @@
 	</tbody>
 </table>
 
-{{questions[currentQuestion].text}}
 
-<center>
-	<div ng-if = "questions[currentQuestion].qtype == 1">
-		<textarea class = "form-control" ng-model = "questions[currentQuestion].textAns"> </textarea>
-	</div>
-	<div ng-if = "questions[currentQuestion].qtype == 2">
-		<input type = "range" ng-model = "questions[currentQuestion].rangeAns" min = "0" max = "10" style = "width: 70%; display: inline-block;"/> 
-		<span> {{questions[currentQuestion].rangeAns}} </span>
-	</div>
-	<div ng-if = "questions[currentQuestion].qtype == 3">
-		<rating ng-model = "questions[currentQuestion].stars" 
-			max = "5"  
-		    on-hover = "hoveringOver(value)" 
-		    on-leave = "overStar = null" 
-		    ng-click = "rate(questions[currentQuestion].stars)" />
-	</div>
-</rating>
+<div ng-show = "!done">
+	{{questions[currentQuestion].text}}
 
-<center>
-	<button class = "btn btn-default" ng-click = "prevQuestion()" ng-if = "currentQuestion != 0"> prev </button>
-	<button class = "btn btn-default" ng-click = "nextQuestion()" ng-if = "currentQuestion != questionsCount - 1"> next </button>
+	<center>
+		<div ng-if = "questions[currentQuestion].qtype == 1">
+			<textarea class = "form-control" ng-model = "questions[currentQuestion].textAns"> </textarea>
+		</div>
+		<div ng-if = "questions[currentQuestion].qtype == 2">
+			<input type = "range" ng-model = "questions[currentQuestion].rangeAns" min = "0" max = "10" style = "width: 70%; display: inline-block;"/> 
+			<span> {{questions[currentQuestion].rangeAns}} </span>
+		</div>
+		<div ng-if = "questions[currentQuestion].qtype == 3">
+			<rating ng-model = "questions[currentQuestion].stars" 
+				max = "5"  
+			    on-hover = "hoveringOver(value)" 
+			    on-leave = "overStar = null" 
+			    ng-click = "rate(questions[currentQuestion].stars)" />
+		</div>
+	</rating>
 
-	<button class = "btn btn-default" ng-click = "submitSurvey()" ng-if = "currentQuestion == questionsCount - 1"> Submit </button>
-</center>
+	<center>
+		<button class = "btn btn-default" ng-click = "prevQuestion()" ng-if = "currentQuestion != 0"> prev </button>
+		<button class = "btn btn-default" ng-click = "nextQuestion()" ng-if = "currentQuestion != questionsCount - 1"> next </button>
+
+		<button class = "btn btn-default" ng-click = "submitSurvey()" ng-if = "currentQuestion == questionsCount - 1"> Submit </button>
+	</center>
+</div>
+
+<div ng-show = "done">
+	<h2> You have completed this survey! </h2>
+</div>

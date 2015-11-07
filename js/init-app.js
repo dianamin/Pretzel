@@ -36,6 +36,10 @@ app.config(['$routeProvider',
         when('/login', {
             templateUrl: 'views/login.html',
             controller: 'EnterAccountCtrl'
+        }).
+        when('/my-account', {
+            templateUrl: 'views/my-account.html',
+            controller: 'MyAccountCtrl'
         })
         /*when('/', {
             templateUrl: 'panel.html',
