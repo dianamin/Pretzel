@@ -1,0 +1,25 @@
+<h3> New Survey </h3>
+
+<label> Title </label>
+<input class = "form-control" type = "text" ng-model = "survey.title"/>
+
+<label> Description </label>
+<textarea class = "form-control" ng-model = "survey.description"> </textarea>
+
+<label> Image Url </label>
+<input class = "form-control" type = "text" ng-model = "survey.imgUrl"/>
+
+<label> Language </label>
+<select class = "form-control"
+		ng-options = "language.id as language.name for language in languages track by language.id" 
+		ng-model = "survey.language">
+</select>
+
+<label> Category </label>
+<select class = "form-control"
+		ng-options = "category.id as category.name for category in categories track by category.id" 
+		ng-model = "survey.category">
+</select>
+
+{{survey.language}} <br />
+{{survey.description}} <br />

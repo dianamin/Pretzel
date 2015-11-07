@@ -20,8 +20,8 @@ app.config(['$routeProvider',
         when('/', {
             templateUrl: 'views/home.html'
         }).
-        when('/create-quiz', {
-            templateUrl: 'views/create-quiz.html',
+        when('/create-survey', {
+            templateUrl: 'views/create-survey.html',
             controller: 'NewSurveyCtrl'
         })
         /*when('/', {
