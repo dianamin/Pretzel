@@ -19,7 +19,7 @@ app.controller('RequestsCtrl', function($scope, $http) {
     $http.get("php/my_account.php").then(function(response) {
 		$scope.user = response.data;
 		console.log($scope.user);
-		if ($scope.user.level == 2)  $scope.admin = true;
+		if ($scope.user.level > 0)  $scope.admin = true;
 	});
 
 	$scope.changeStatus = function(userId, request_id) {

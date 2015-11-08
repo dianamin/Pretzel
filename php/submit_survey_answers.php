@@ -14,5 +14,12 @@
 	$insert_done_survey = "INSERT INTO done_surveys(survey_id, user_id) VALUES('{$survey_id}', '{$user_id}')";
 	$inserted_done_survey = @$DB->query($insert_done_survey);
 
+	$_SESSION['user_rating'] += 10;
+	$rating = $_SESSION['user_rating'];
 
+	$update_rating_query = "
+		UPDATE users
+		SET rating = '{$rating}'
+		WHERE id = '{$id}'";
+	$update_rating = $DB->query($update_rating_query);
 ?>

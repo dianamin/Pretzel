@@ -2,8 +2,8 @@
 	error_reporting(0);
 	
 	$host = "localhost";
-	$username = "";
-	$password = "";
+	$username = "root";
+	$password = "root";
 	$dbname = "pretzel";
 	
 	$DB = new MySQLi($host, $username, $password, $dbname); 

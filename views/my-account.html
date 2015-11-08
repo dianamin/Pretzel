@@ -7,9 +7,17 @@
 	</div>
 
 	<div ng-show = "user.id != 0">
-		{{user.name}}
-		{{user.rating}}
-		<img ng-src = "{{user.img}}" style = "height: 200px;"/>
+		<table class = "table">
+			<tr>
+				<td>
+					<h2> {{user.name}} </h2>
+					<h3> Rating: {{user.rating}} </h3>
+				</td>
+				<td>
+					<img ng-src = "{{user.img}}" style = "height: 200px;"/>
+				</td>
+			</tr>
+		</table>
 		<br />
 
 		<button ng-show = "user.level == 0 && asked == false" class = "btn btn-default" ng-click = "requestBossRights()">

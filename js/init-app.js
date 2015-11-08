@@ -62,42 +62,10 @@ app.config(['$routeProvider',
         when('/edit/:surveyId', {
             templateUrl: 'views/edit.html',
             controller: 'EditSurveyCtrl'
-        })
-        /*when('/', {
-            templateUrl: 'panel.html',
-            controller: 'AdminPanelCtrl'
-        }).
-        when('/edit/:lessonId', {
-            templateUrl: 'edit.html',
-            controller: 'EditPageCtrl'
-        })
-        when('/lessons', {
-            templateUrl: 'list.html',
-            controller: 'AdminListCtrl'
-        }).
-        when('/edit/:lessonId', {
-            templateUrl: 'edit.html',
-            controller: 'EditPageCtrl'
-        }).
-        when('/create', {
-            templateUrl: 'create.html',
-            controller: 'CreatePageCtrl'
-        }).
-        when('/reports', {
-            templateUrl: 'reports.html',
-            controller: 'ReportedEssaysCtrl'
-        }).
-        when('/symbols', {
-            templateUrl: 'symbols.html',
-            controller: 'SymbolsCtrl'
-        }).
-        when('/questions', {
-            templateUrl: 'questions.html',
-            controller: 'QuestionsCtrl'
         }).
         otherwise({
-            redirectTo: 'panel.html',
-            controller: 'AdminPanelCtrl'
-        })*/
+            templateUrl: 'views/home.html',
+            controller: 'GeneralSurveysCtrl'
+        })
     }
 ]);

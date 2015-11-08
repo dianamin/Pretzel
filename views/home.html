@@ -20,6 +20,19 @@
 	<div class = "col-sm-6 col-md-6" class = "padding-20"> 
 		<div class = "survey-list-container"> 
 			<h3> Recommended Surveys </h3>
+
+			<div ng-repeat = "survey in recommendedSurveys"  ng-if = "survey.published == 1" style = "display: inline-block;">
+				<a href = "#/takeSurvey/{{survey.id}}">
+					<div class = "survey-thumb">
+						<div class = "survey-image" back-img = {{survey.img}}> </div>
+						<br />
+						<div class = "survey-statistic"> <span class = "glyphicon glyphicon-question-sign"> </span> 10 </div>
+						<div class = "survey-statistic"> <span class = "glyphicon glyphicon-user"> </span> 66 </div>
+						<p> {{survey.title}} </p>		
+					</div>
+				</a>
+			</div>
+
 		</div>
 	</div>
 </div>	

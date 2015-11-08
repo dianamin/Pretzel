@@ -19,6 +19,7 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
             if (data != 0) $scope.done = true;
             else $scope.done = false;
 
+
             $scope.$apply();
         }
     });
@@ -31,6 +32,13 @@ app.controller('TakeSurveyCtrl', function($scope, $http, $routeParams) {
 
         success: function(data) {
         	$scope.survey = JSON.parse(data);
+
+            if ($scope.survey.loginRequired == 1) {
+                $http.get("php/my_account.php").then(function(response) {
+                    $scope.user = response.data;
+                    if ($scope.user.id == 0)  window.location.href = "#/login";
+                });
+            }
         }
     });
 

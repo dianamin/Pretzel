@@ -48,6 +48,33 @@ app.controller('StatisticsCtrl', function($scope, $http, $routeParams) {
         }
     });
 
+    $scope.publishSurvey = function() {
+        $.ajax({
+            type: "POST",
+            url: "php/publish_survey.php",
+            data: {id: $scope.surveyId}, 
+            cache: false,
+
+            success: function(data) {
+                location.reload();
+            }
+        });
+    }
+
+
+    $scope.unPublishSurvey = function() {
+        $.ajax({
+            type: "POST",
+            url: "php/unpublish_survey.php",
+            data: {id: $scope.surveyId}, 
+            cache: false,
+
+            success: function(data) {
+                location.reload();
+            }
+        });
+    }
+
     $scope.currentQuestion = 0;
 
     $scope.nextQuestion = function() {
